@@ -1,0 +1,4 @@
+app_name: "pyTools"
+version: "1.0.0"
+debug: false
+data_dir: "~/.app"
