@@ -1,0 +1,82 @@
+/* Main application styles */
+
+$success: green;
+$error: red;
+$foreground: white;
+Screen {
+    background: $background;
+    color: $text;
+}
+
+#settings-container {
+    padding: 2;
+    height: 100%;
+}
+
+#settings-grid {
+    grid-size: 2;
+    grid-gutter: 1;
+    margin-bottom: 2;
+}
+
+.setting-label {
+    text-align: right;
+    padding-right: 1;
+    color: $text-secondary;
+}
+
+.title {
+    text-align: center;
+    padding: 1;
+    border-bottom: heavy $primary;
+    margin-bottom: 2;
+}
+
+#welcome {
+    text-align: center;
+    padding: 2;
+    color: $primary;
+    text-style: bold;
+}
+
+#settings-buttons {
+    height: auto;
+    margin-top: 2;
+    align-horizontal: center;
+}
+
+#status-text {
+    width: 1fr;
+    padding: 0 1;
+}
+
+#time-display {
+    width: auto;
+    padding: 0 1;
+    color: $text-secondary;
+}
+
+/* Button styles */
+Button {
+    margin: 0 1;
+}
+
+
+Button#save-btn {
+    background: $success;
+}
+
+Button#cancel-btn {
+    background: $error;
+}
+
+/* Input styles */
+Input {
+    width: 100%;
+}
+
+/* DataTable styles */
+DataTable {
+    height: 1fr;
+    margin: 1;
+}

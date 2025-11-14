@@ -1,29 +1,33 @@
 [project]
-name = "pytools"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
 authors = [
-    { name = "Jonathan Scheer", email = "jonatron@gmail.com" }
+  {name = "Jonathan Scheer", email = "jonatron@gmail.com"},
 ]
-requires-python = ">=3.14"
 dependencies = [
-    "fpdf2>=2.8.5",
-    "niquests>=3.15.2",
-    "polars>=1.35.2",
-    "pydantic>=2.12.4",
-    "pydantic-settings>=2.12.0",
-    "python-dotenv>=1.2.1",
-    "textual>=6.6.0",
+  "click>=8.3.0",
+  "fpdf2>=2.8.5",
+  "niquests>=3.15.2",
+  "polars>=1.35.2",
+  "pydantic>=2.12.4",
+  "pydantic-settings>=2.12.0",
+  "python-dotenv>=1.2.1",
+  "textual>=6.6.0",
 ]
+description = "Add your description here"
+name = "pytools"
+readme = "README.md"
+requires-python = ">=3.14"
+version = "0.1.0"
 
 [build-system]
-requires = ["uv_build>=0.9.4,<0.10.0"]
 build-backend = "uv_build"
+requires = ["uv_build>=0.9.4,<0.10.0"]
 
 [dependency-groups]
 dev = [
-    "jupyterlab>=4.4.10",
-    "pytest>=9.0.1",
-    "ruff>=0.14.4",
+  "jupyterlab>=4.4.10",
+  "pytest>=9.0.1",
+  "ruff>=0.14.4",
 ]
+
+[project.scripts]
+pytools = "pytools.cli:cli"

@@ -1,4 +1,36 @@
 app_name: "pyTools"
 version: "1.0.0"
 debug: false
-data_dir: "~/.app"
+data_dir: "~/.toolsapp"
+
+database:
+  host: "localhost"
+  port: 5432
+  name: "myapp"
+  username: "user"
+  password: "secret"
+
+api:
+  base_url: "https://api.example.com"
+  timeout: 30
+  retries: 3
+  api_key: "your-api-key-here"
+
+ui:
+  theme: "dark"
+  refresh_rate: 0.5
+  show_debug: false
+  default_screen: "main"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: null
+
+plugins:
+  - "plugin1"
+  - "plugin2"
+
+custom_settings:
+  feature_flag: true
+  max_items: 100

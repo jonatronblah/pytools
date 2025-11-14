@@ -5,6 +5,34 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 import yaml
 
 
+class DatabaseConfig(BaseModel):
+    host: str = "localhost"
+    port: int = 5432
+    name: str = "myapp"
+    username: str = "user"
+    password: str = Field(default="", exclude=True)
+
+
+class APISettings(BaseModel):
+    base_url: str = "https://api.example.com"
+    timeout: int = 30
+    retries: int = 3
+    api_key: Optional[str] = Field(default=None, exclude=True)
+
+
+class UISettings(BaseModel):
+    theme: str = "dark"
+    refresh_rate: float = 0.5
+    show_debug: bool = False
+    default_screen: str = "main"
+
+
+class LoggingConfig(BaseModel):
+    level: str = "INFO"
+    format: str = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    file_path: Optional[Path] = None
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -16,7 +44,16 @@ class Settings(BaseSettings):
     app_name: str = "pyTools"
     version: str = "0.1.0"
     debug: bool = False
-    data_dir: Path = Field(default_factory=lambda: Path.home() / ".app")
+    data_dir: Path = Field(default_factory=lambda: Path.home() / ".toolsapp")
+
+    database: DatabaseConfig = DatabaseConfig()
+    api: APISettings = APISettings()
+    ui: UISettings = UISettings()
+    logging: LoggingConfig = LoggingConfig()
+
+    # Additional configuration
+    plugins: List[str] = Field(default_factory=list)
+    custom_settings: Dict[str, Any] = Field(default_factory=dict)
 
     @classmethod
     def from_yaml(cls, yaml_path: Path) -> "Settings":
