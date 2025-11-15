@@ -21,7 +21,7 @@ class APISettings(BaseModel):
 
 
 class UISettings(BaseModel):
-    theme: str = "dark"
+    # theme: str = "dark"
     refresh_rate: float = 0.5
     show_debug: bool = False
     default_screen: str = "main"

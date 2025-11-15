@@ -23,11 +23,11 @@ class SettingsScreen(BaseScreen):
             with Grid(id="settings-grid"):
                 # UI Settings
                 yield Label("Theme:", classes="setting-label")
-                yield Select(
-                    [("dark", "Dark"), ("light", "Light")],
-                    value=settings.ui.theme,
-                    id="theme-select",
-                )
+                # yield Select(
+                #     [("dark", "Dark"), ("light", "Light")],
+                #     value=settings.ui.theme,
+                #     id="theme-select",
+                # )
 
                 yield Label("Refresh Rate:", classes="setting-label")
                 yield Input(

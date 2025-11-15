@@ -12,7 +12,7 @@ class MainScreen(BaseScreen):
     """Main application screen"""
 
     BINDINGS = [
-        ("d", "toggle_dark", "Toggle Dark Mode"),
+        # ("d", "toggle_dark", "Toggle Dark Mode"),
         ("s", "switch_to_settings", "Settings"),
         ("q", "quit", "Quit"),
         ("r", "refresh_data", "Refresh"),
@@ -88,9 +88,9 @@ class MainScreen(BaseScreen):
 
             command_input.value = ""
 
-    def action_toggle_dark(self) -> None:
-        """Toggle dark mode"""
-        self.app.dark = not self.app.dark
+    # def action_toggle_dark(self) -> None:
+    #     """Toggle dark mode"""
+    #     self.app.dark = not self.app.dark
 
     def action_switch_to_settings(self) -> None:
         """Switch to settings screen"""
